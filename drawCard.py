@@ -11,20 +11,28 @@ def drawCard():
             'Ace of Clubs', '2 of Clubs', '3 of Clubs', '4 of Clubs', '5 of Clubs', '6 of Clubs', '7 of Clubs', '8 of Clubs',
             '9 of Clubs', '10 of Clubs', 'Jack of Clubs', 'Queen of Clubs', 'King of Clubs']
     usedCards = []
-    count = 1
-    for i in range(count):
+
+    len_list = (len(unUsedCards))
+
+    #for i in range(1):
+    while unUsedCards:
+        print (len_list)
         drawnCard = random.choice(unUsedCards)
         usedCards.append(drawnCard)
-        print (usedCards)
         unUsedCards = [x for x in unUsedCards if x not in usedCards]
-        print (unUsedCards)
-       # print (unUsedCards.pop(random.randrange(len(unUsedCards))))
+        len_list -= 1
+        print (usedCards.pop(random.randrange(len(usedCards))))
+        if unUsedCards >= usedCards:
+            response = raw_input("Would you like to draw again?")
+            if response == 'Y':
+                print (usedCards.pop(random.randrange(len(usedCards))))
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         main(int(sys.argv(1)))
 
 drawCard()
+
 
 
 
