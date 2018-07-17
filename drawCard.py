@@ -23,7 +23,7 @@ def drawCard():
         len_list -= 1
         print (usedCards.pop(random.randrange(len(usedCards))))
         if unUsedCards >= usedCards:
-            response = raw_input("Would you like to draw again?")
+            response = raw_input("Press the Enter key to draw another card")
             if response == 'Y':
                 print (usedCards.pop(random.randrange(len(usedCards))))
 
@@ -32,7 +32,4 @@ if __name__ == '__main__':
         main(int(sys.argv(1)))
 
 drawCard()
-
-
-
 
