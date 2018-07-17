@@ -1,4 +1,6 @@
 import random, sys
+
+
 def drawCard():
     unUsedCards = ['Ace of Spades', '2 of Spades', '3 of Spades', '4 of Spades', '5 of Spades', '6 of Spades', '7 of Spades', '8 of Spades',
             '9 of Spades', '10 of Spades', 'Jack of Spades', 'Queen of Spades', 'King of Spades',
@@ -9,15 +11,20 @@ def drawCard():
             'Ace of Clubs', '2 of Clubs', '3 of Clubs', '4 of Clubs', '5 of Clubs', '6 of Clubs', '7 of Clubs', '8 of Clubs',
             '9 of Clubs', '10 of Clubs', 'Jack of Clubs', 'Queen of Clubs', 'King of Clubs']
     usedCards = []
-    for i in range(1):
+    count = 1
+    for i in range(count):
         drawnCard = random.choice(unUsedCards)
         usedCards.append(drawnCard)
+        print (usedCards)
         unUsedCards = [x for x in unUsedCards if x not in usedCards]
-        print (unUsedCards.pop(random.randrange(len(unUsedCards))))
+        print (unUsedCards)
+       # print (unUsedCards.pop(random.randrange(len(unUsedCards))))
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         main(int(sys.argv(1)))
 
 drawCard()
+
+
 
