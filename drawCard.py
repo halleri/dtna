@@ -10,15 +10,13 @@ class Card(object):
 
         random.shuffle(deck)
 
-        discarded_deck_list = []
         while deck:
-            x = deck.pop()
-            discarded_deck_list.append(x)
-            print (discarded_deck_list.pop(random.randrange(len(discarded_deck_list))))
+            card_shown = deck.pop()
+            print(card_shown)
             if True:
                 response = raw_input("Press the Enter key to draw another card")
                 if response == 'y':
-                    print (discarded_deck_list)
+                    print (card_shown)
                 if response == 'n':
                     sys.exit()
                 if not deck:
@@ -29,3 +27,10 @@ class Card(object):
 if __name__ == '__main__':
     card = Card()
     card.cards()
+
+
+
+
+
+
+
